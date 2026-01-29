@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <header class="nav">
         <div class="logo">SMURF CRUISER CLUB</div>
         <nav>
@@ -17,6 +18,13 @@
             <a href="#">About</a>
             <a href="#">Contact</a>
         </nav>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
     </header>
 
     <section class="hero">
@@ -30,7 +38,39 @@
         </div>
     </section>
 
-    <section class="featured">
+    <!-- Mission Section -->
+    <section class="mission reveal">
+        <div class="mission-inner">
+            <h2>Why We Ride</h2>
+            <p>
+                Smurf Cruiser Club is more than a merch brand — it’s a community of riders who believe in easy miles, good company, and giving back. 
+                Every month we support a new charity, turning every cruise and every purchase into real impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- Meetups Section -->
+    <section class="meetups reveal">
+        <h2>Upcoming Meetups</h2>
+        <div class="meetup-grid">
+            <div class="meetup-card">
+                <h3>Blackpool Coastal Cruise</h3>
+                <p class="date">March 12, 2026</p>
+                <p class="desc">A relaxed coastal ride ending with food and drinks.</p>
+                <a class="cta small" href="#">View Details</a>
+            </div>
+
+            <div class="meetup-card">
+                <h3>Lancashire Evening Run</h3>
+                <p class="date">March 28, 2026</p>
+                <p class="desc">A sunset cruise through scenic countryside routes.</p>
+                <a class="cta small" href="#">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gear -->
+    <section class="featured reveal">
         <h2>Featured Gear</h2>
         <div class="grid">
             <div class="item">
@@ -51,7 +91,18 @@
         </div>
     </section>
 
-    <section class="charity">
+    <!-- Signup -->
+    <section class="signup reveal">
+        <h2>Join the Club</h2>
+        <p>Get meetup updates, early access to drops, and charity announcements.</p>
+        <form class="signup-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Join</button>
+        </form>
+    </section>
+
+    <!-- Charity -->
+    <section class="charity reveal">
         <h2>This Month’s Charity</h2>
         <p class="charity-desc">
             Each month we support a new organisation making real impact.  
@@ -66,5 +117,7 @@
     <footer>
         <p>© 2026 Smurf Cruiser Club - Cruise with Purpose</p>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>

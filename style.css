@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 50px;
+    padding: 20px 40px;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(6px);
     position: fixed;
@@ -33,7 +33,7 @@ body {
 }
 
 .nav a {
-    margin-left: 25px;
+    margin-left: 20px;
     text-decoration: none;
     color: #e6e6e6;
     font-weight: 500;
@@ -44,27 +44,115 @@ body {
     color: #4da3ff;
 }
 
+/* Burger Icon */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.burger span {
+    width: 28px;
+    height: 3px;
+    background: #e6e6e6;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Mobile Nav Hidden by Default */
+.nav nav {
+    transition: 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .nav {
+        padding: 15px 25px;
+    }
+
+    .nav nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(0,0,0,0.85);
+        backdrop-filter: blur(8px);
+        width: 200px;
+        padding: 20px;
+        border-radius: 0 0 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transform: translateX(100%);
+    }
+
+    .nav nav.open {
+        transform: translateX(0);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    /* Hide desktop nav layout */
+    .nav nav a {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    /* Burger animation */
+    .burger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('hero.jpg') center/cover no-repeat;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 20px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('images/bikers.jpg') center/cover no-repeat;
+    filter: blur(6px) brightness(0.45);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 3.6rem;
     font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* tighter */
+    line-height: 1.1; /* tighter vertical rhythm */
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.85;
+    font-size: 1.1rem;
+    margin-bottom: 20px; /* tighter */
+    opacity: 0.9;
 }
 
 .cta-group {
@@ -102,24 +190,24 @@ body {
 
 /* Featured Gear */
 .featured {
-    padding: 100px 50px;
+    padding: 50px 40px;
     text-align: center;
 }
 
 .featured h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 2.3rem;
+    margin-bottom: 25px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
+    gap: 30px;
 }
 
 .item {
     background: #14171c;
-    padding: 20px;
+    padding: 18px;
     border-radius: 8px;
     transition: 0.3s;
 }
@@ -129,10 +217,10 @@ body {
 }
 
 .img-placeholder {
-    height: 180px;
+    height: 160px;
     background: #1f232a;
     border-radius: 6px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .price {
@@ -140,16 +228,107 @@ body {
     font-weight: 600;
 }
 
+/* Meetups */
+.meetups {
+    padding: 50px 40px;
+    background: #0f1216;
+    text-align: center;
+}
+
+.meetup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.meetup-card {
+    background: #14171c;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.meetup-card:hover {
+    transform: translateY(-5px);
+}
+
+.meetup-card .date {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.meetup-card .desc {
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.cta.small {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+/* Mission Section */
+.mission {
+    padding: 50px 40px;
+    background: #101317;
+    text-align: center;
+}
+
+.mission-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Signup */
+.signup {
+    padding: 50px 40px;
+    text-align: center;
+    background: #0d0f12;
+}
+
+.signup-form {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.signup-form input {
+    padding: 12px 15px;
+    width: 260px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.signup-form button {
+    padding: 12px 20px;
+    background: #4da3ff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.signup-form button:hover {
+    background: #77baff;
+}
+
 /* Charity Section */
 .charity {
-    padding: 100px 50px;
+    padding: 50px 40px;
     text-align: center;
     background: #101317;
 }
 
 .charity-desc {
     max-width: 600px;
-    margin: 0 auto 25px;
+    margin: 0 auto 15px;
     opacity: 0.85;
 }
 
@@ -157,7 +336,7 @@ body {
     width: 60%;
     height: 12px;
     background: #1c1f24;
-    margin: 20px auto;
+    margin: 15px auto;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -169,14 +348,26 @@ body {
 }
 
 .raised {
-    margin-top: 10px;
+    margin-top: 8px;
     color: #4da3ff;
 }
 
-/* Footer Stuffs */
+/* Footer */
 footer {
-    padding: 40px;
+    padding: 25px;
     text-align: center;
     background: #0b0d10;
     opacity: 0.7;
+}
+
+/* ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
