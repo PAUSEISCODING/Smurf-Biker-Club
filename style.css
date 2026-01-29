@@ -1,0 +1,182 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0d0f12;
+    color: #e6e6e6;
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+.nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #e6e6e6;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav a:hover {
+    color: #4da3ff;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta {
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.cta.primary {
+    background: #4da3ff;
+    color: #0d0f12;
+}
+
+.cta.primary:hover {
+    background: #77baff;
+}
+
+.cta.secondary {
+    border: 2px solid #4da3ff;
+    color: #4da3ff;
+}
+
+.cta.secondary:hover {
+    background: #4da3ff;
+    color: #0d0f12;
+}
+
+/* Featured Gear */
+.featured {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+.item {
+    background: #14171c;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.img-placeholder {
+    height: 180px;
+    background: #1f232a;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #4da3ff;
+    font-weight: 600;
+}
+
+/* Charity Section */
+.charity {
+    padding: 100px 50px;
+    text-align: center;
+    background: #101317;
+}
+
+.charity-desc {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    opacity: 0.85;
+}
+
+.progress {
+    width: 60%;
+    height: 12px;
+    background: #1c1f24;
+    margin: 20px auto;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bar {
+    width: 45%;
+    height: 100%;
+    background: #4da3ff;
+}
+
+.raised {
+    margin-top: 10px;
+    color: #4da3ff;
+}
+
+/* Footer */
+footer {
+    padding: 40px;
+    text-align: center;
+    background: #0b0d10;
+    opacity: 0.7;
+}
